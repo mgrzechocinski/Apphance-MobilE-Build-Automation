@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 import static com.apphance.flow.executor.command.CommandLogFilesGenerator.LogFile.ERR
 import static com.apphance.flow.executor.command.CommandLogFilesGenerator.LogFile.STD
+import static java.lang.ProcessBuilder.Redirect.appendTo
 import static java.lang.System.getProperties
 
 @Mixin(Preconditions)

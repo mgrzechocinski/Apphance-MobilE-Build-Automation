@@ -9,21 +9,20 @@ import com.apphance.flow.configuration.apphance.ApphanceConfiguration
 import com.apphance.flow.configuration.ios.IOSConfiguration
 import com.apphance.flow.configuration.ios.IOSFrameworkConfiguration
 import com.apphance.flow.configuration.ios.IOSReleaseConfiguration
-import com.apphance.flow.configuration.ios.IOSUnitTestConfiguration
 import com.apphance.flow.configuration.ios.variants.IOSVariantFactory
 import com.apphance.flow.configuration.ios.variants.IOSVariantsConfiguration
 import com.apphance.flow.configuration.reader.GradlePropertiesPersister
 import com.apphance.flow.configuration.reader.PropertyPersister
 import com.apphance.flow.configuration.release.ReleaseConfiguration
-import com.apphance.flow.detection.ProjectTypeDetector
+import com.apphance.flow.detection.project.ProjectTypeDetector
 import com.google.inject.AbstractModule
 import com.google.inject.assistedinject.FactoryModuleBuilder
 import com.google.inject.multibindings.MapBinder
 import groovy.transform.PackageScope
 import org.gradle.api.Project
 
-import static com.apphance.flow.detection.ProjectType.ANDROID
-import static com.apphance.flow.detection.ProjectType.IOS
+import static com.apphance.flow.detection.project.ProjectType.ANDROID
+import static com.apphance.flow.detection.project.ProjectType.IOS
 
 class ConfigurationModule extends AbstractModule {
 
@@ -43,7 +42,7 @@ class ConfigurationModule extends AbstractModule {
                     IOSReleaseConfiguration,
                     IOSVariantsConfiguration,
                     IOSFrameworkConfiguration,
-                    IOSUnitTestConfiguration,
+//                    IOSUnitTestConfiguration,
             ],
     ]
 

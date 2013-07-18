@@ -4,10 +4,10 @@ import com.apphance.flow.configuration.AbstractConfiguration
 import com.apphance.flow.configuration.properties.ListStringProperty
 import com.apphance.flow.configuration.properties.ProjectTypeProperty
 import com.apphance.flow.configuration.properties.StringProperty
-import com.apphance.flow.detection.ProjectType
+import com.apphance.flow.detection.project.ProjectType
 import spock.lang.Specification
 
-import static com.apphance.flow.detection.ProjectType.ANDROID
+import static ProjectType.ANDROID
 import static org.apache.commons.lang.StringUtils.isBlank
 
 class ConfigurationWizardSpec extends Specification {
@@ -106,7 +106,7 @@ class ConfigurationWizardSpec extends Specification {
         def conf = GroovyStub(AbstractConfiguration)
         StringProperty first = new StringProperty(value: '')
         ListStringProperty second = new ListStringProperty(interactive: { isBlank(first.value) })
-        conf.flowProperties >> [first, second]
+        conf.propertyFields >> [first, second]
         def wizard = GroovySpy(ConfigurationWizard)
         wizard.readProperty(_) >> { first.value = 'abc' }
 
