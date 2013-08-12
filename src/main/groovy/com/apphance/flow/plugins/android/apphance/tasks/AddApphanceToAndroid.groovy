@@ -215,7 +215,7 @@ class AddApphanceToAndroid {
         assert projectProperties.exists()
         List<String> lines = projectProperties.readLines()
         int libSize = maxLibNumber(lines)
-        projectProperties << "android.library.reference.${libSize + 1}=libs/apphance-library-${apphanceVersion}"
+        projectProperties << "\nandroid.library.reference.${libSize + 1}=libs/apphance-library-${apphanceVersion}"
     }
 
     int maxLibNumber(List<String> lines) {
